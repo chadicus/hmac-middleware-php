@@ -36,12 +36,14 @@ final class Token
     private $timestamp;
 
     /**
-     * Construct a new payload instance
+     * Construct a new Token instance
      *
      * @param string  $publicKey The public api key.
      * @param string  $signature A unique hash for the request.
      * @param string  $nonce     An arbitrary string used only once.
      * @param integer $timestamp The request timestamp.
+     *
+     * @throws \InvalidArgumentException Thrown if any parameters are invalid.
      */
     public function __construct($publicKey, $signature, $nonce, $timestamp)
     {
