@@ -8,7 +8,7 @@ use Chadicus\Hmac\Token;
  * @coversDefaultClass \Chadicus\Hmac\Token
  * @covers ::__construct
  */
-final class TokenTest extends \PHPUnit_Framework_TestCase
+final class TokenTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Verify basic behavior of getPublicKey().

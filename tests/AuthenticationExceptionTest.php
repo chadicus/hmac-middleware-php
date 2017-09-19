@@ -8,7 +8,7 @@ use Chadicus\Hmac\AuthenticationException;
  * @coversDefaultClass \Chadicus\Hmac\AuthenticationException
  * @covers ::__construct
  */
-final class AuthenticationExceptionTest extends \PHPUnit_Framework_TestCase
+final class AuthenticationExceptionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Verify basic behavior of getStatusCode().
