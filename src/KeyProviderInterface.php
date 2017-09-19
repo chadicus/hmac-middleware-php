@@ -14,5 +14,5 @@ interface KeyProviderInterface
      *
      * @return string|null The private API key or null if none found.
      */
-    public function findPrivateKey($publicKey);
+    public function findPrivateKey(string $publicKey);
 }

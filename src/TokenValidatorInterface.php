@@ -20,5 +20,5 @@ interface TokenValidatorInterface
      *
      * @throws AuthenticationException Thrown if the token cannot be validated or is missing data.
      */
-    public function validate($privateKey, Token $token, ServerRequestInterface $request);
+    public function validate(string $privateKey, Token $token, ServerRequestInterface $request) : bool;
 }

@@ -42,7 +42,7 @@ class AuthenticationException extends \Exception
      *
      * @return integer Status code.
      */
-    public function getStatusCode()
+    public function getStatusCode() : int
     {
         return $this->statusCode;
     }
@@ -52,7 +52,7 @@ class AuthenticationException extends \Exception
      *
      * @return string Reason phrase
      */
-    public function getReasonPhrase()
+    public function getReasonPhrase() : string
     {
         return $this->reasonPhrase;
     }
