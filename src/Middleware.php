@@ -11,7 +11,6 @@ use Psr\Http\Message\ResponseInterface;
  */
 final class Middleware
 {
-
     /**
      * Obtains private keys.
      *
