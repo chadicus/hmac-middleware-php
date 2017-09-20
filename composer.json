@@ -1,5 +1,5 @@
 {
-    "name": "chadicus/hmac-middleware",
+    "name": "chadicus/psr-middleware-hmac",
     "description": "PSR-7 middleware for API authentication",
     "license": "MIT",
     "authors": [
