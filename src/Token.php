@@ -45,7 +45,7 @@ final class Token
      *
      * @throws \InvalidArgumentException Thrown if any parameters are invalid.
      */
-    public function __construct($publicKey, $signature, $nonce, $timestamp)
+    public function __construct(string $publicKey, string $signature, string $nonce, int $timestamp)
     {
         $this->publicKey = $publicKey;
         $this->signature = $signature;
@@ -58,7 +58,7 @@ final class Token
      *
      * @return string
      */
-    public function getPublicKey()
+    public function getPublicKey() : string
     {
         return $this->publicKey;
     }
@@ -68,7 +68,7 @@ final class Token
      *
      * @return string
      */
-    public function getSignature()
+    public function getSignature() : string
     {
         return $this->signature;
     }
@@ -78,7 +78,7 @@ final class Token
      *
      * @return string
      */
-    public function getNonce()
+    public function getNonce() : string
     {
         return $this->nonce;
     }
@@ -88,7 +88,7 @@ final class Token
      *
      * @return integer
      */
-    public function getTimestamp()
+    public function getTimestamp() : int
     {
         return $this->timestamp;
     }

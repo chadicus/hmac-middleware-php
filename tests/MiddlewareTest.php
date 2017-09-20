@@ -11,7 +11,7 @@ use Zend\Diactoros\ServerRequest;
  * @coversDefaultClass \Chadicus\Hmac\Middleware
  * @covers ::__construct
  */
-final class MiddlewareTest extends \PHPUnit_Framework_TestCase
+final class MiddlewareTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Verify basic behavior of __invoke().
@@ -31,13 +31,13 @@ final class MiddlewareTest extends \PHPUnit_Framework_TestCase
 
         $token = new Hmac\Token($publicKey, $signature, $nonce, $time);
 
-        $provider = $this->getMock('\\Chadicus\\Hmac\\KeyProviderInterface');
+        $provider = $this->getMockBuilder('\\Chadicus\\Hmac\\KeyProviderInterface')->getMock();
         $provider->method('findPrivateKey')->willReturn($privateKey);
 
-        $extractor = $this->getMock('\\Chadicus\\Hmac\\TokenExtractorInterface');
+        $extractor = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenExtractorInterface')->getMock();
         $extractor->method('extract')->willReturn($token);
 
-        $validator = $this->getMock('\\Chadicus\\Hmac\\TokenValidatorInterface');
+        $validator = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenValidatorInterface')->getMock();
         $validator->method('validate')->willReturn(true);
 
         $container = new ArrayObject();
@@ -79,15 +79,15 @@ final class MiddlewareTest extends \PHPUnit_Framework_TestCase
 
         $token = new Hmac\Token($publicKey, $signature, $nonce, $time);
 
-        $provider = $this->getMock('\\Chadicus\\Hmac\\KeyProviderInterface');
+        $provider = $this->getMockBuilder('\\Chadicus\\Hmac\\KeyProviderInterface')->getMock();
         $provider->method('findPrivateKey')->willReturn($privateKey);
 
-        $extractor = $this->getMock('\\Chadicus\\Hmac\\TokenExtractorInterface');
+        $extractor = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenExtractorInterface')->getMock();
         $extractor->method('extract')->willReturn($token);
 
         $exception = new Hmac\AuthenticationException(400, 'Bad Request');
 
-        $validator = $this->getMock('\\Chadicus\\Hmac\\TokenValidatorInterface');
+        $validator = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenValidatorInterface')->getMock();
         $validator->method('validate')->will($this->throwException($exception));
 
         $container = new ArrayObject();

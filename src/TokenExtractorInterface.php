@@ -18,5 +18,5 @@ interface TokenExtractorInterface
      *
      * @throws AuthenticationException Thrown if the token cannot be extracted or is missing data.
      */
-    public function extract(ServerRequestInterface $request);
+    public function extract(ServerRequestInterface $request) : Token;
 }

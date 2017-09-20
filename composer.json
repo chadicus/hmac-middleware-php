@@ -1,5 +1,5 @@
 {
-    "name": "chadicus/hmac-middleware",
+    "name": "chadicus/psr-middleware-hmac",
     "description": "PSR-7 middleware for API authentication",
     "license": "MIT",
     "authors": [
@@ -10,14 +10,14 @@
         }
     ],
     "require": {
-        "php": "~5.6 || ~7.0",
+        "php": "^7.0",
         "psr/http-message": "^1.0"
     },
     "require-dev": {
         "chadicus/coding-standard": "^1.1",
-        "phpunit/phpunit": "^5.3",
-        "satooshi/php-coveralls": "^1.0",
-        "zendframework/zend-diactoros": "^1.3"
+        "phpunit/phpunit": "^6.0",
+        "zendframework/zend-diactoros": "^1.3",
+        "php-coveralls/php-coveralls": "^1.0"
     },
     "autoload": {
         "psr-4": { "Chadicus\\Hmac\\" : "src" }
