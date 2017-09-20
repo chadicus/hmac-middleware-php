@@ -1,8 +1,8 @@
 # PSR Hmac Middlware
 
-[![Build Status](https://travis-ci.org/chadicus/psr-middleware-hmac.svg?branch=master)](https://travis-ci.org/chadicus/psr-middleware-hmac)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chadicus/psr-middleware-hmac/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chadicus/psr-middleware-hmac/?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/chadicus/psr-middleware-hmac/badge.svg?branch=master)](https://coveralls.io/github/chadicus/psr-middleware-hmac?branch=master)
+[![Build Status](https://travis-ci.org/chadicus/hmac-middleware-php.svg?branch=master)](https://travis-ci.org/chadicus/hmac-middleware-php)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chadicus/hmac-middleware-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chadicus/hmac-middleware-php/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/chadicus/hmac-middleware-php/badge.svg?branch=master)](https://coveralls.io/github/chadicus/hmac-middleware-php?branch=master)
 
 [![Latest Stable Version](https://poser.pugx.org/chadicus/psr-middleware-hmac/v/stable)](https://packagist.org/packages/chadicus/psr-middleware-hmac)
 [![Latest Unstable Version](https://poser.pugx.org/chadicus/psr-middleware-hmac/v/unstable)](https://packagist.org/packages/chadicus/psr-middleware-hmac)
