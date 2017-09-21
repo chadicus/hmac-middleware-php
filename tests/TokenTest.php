@@ -1,11 +1,11 @@
 <?php
 
-namespace ChadicusTest\Hmac;
+namespace ChadicusTest\Psr\Http\ServerMiddleware;
 
-use Chadicus\Hmac\Token;
+use Chadicus\Psr\Http\ServerMiddleware\Token;
 
 /**
- * @coversDefaultClass \Chadicus\Hmac\Token
+ * @coversDefaultClass \Chadicus\Psr\Http\ServerMiddleware\Token
  * @covers ::__construct
  */
 final class TokenTest extends \PHPUnit\Framework\TestCase

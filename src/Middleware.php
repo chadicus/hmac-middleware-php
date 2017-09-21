@@ -1,6 +1,6 @@
 <?php
 
-namespace Chadicus\Hmac;
+namespace Chadicus\Psr\Http\ServerMiddleware;
 
 use ArrayAccess;
 use Psr\Http\Message\ServerRequestInterface;

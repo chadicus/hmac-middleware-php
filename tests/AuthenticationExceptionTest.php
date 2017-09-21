@@ -1,11 +1,11 @@
 <?php
 
-namespace ChadicusTest\Hmac;
+namespace ChadicusTest\Psr\Http\ServerMiddleware;
 
-use Chadicus\Hmac\AuthenticationException;
+use Chadicus\Psr\Http\ServerMiddleware\AuthenticationException;
 
 /**
- * @coversDefaultClass \Chadicus\Hmac\AuthenticationException
+ * @coversDefaultClass \Chadicus\Psr\Http\ServerMiddleware\AuthenticationException
  * @covers ::__construct
  */
 final class AuthenticationExceptionTest extends \PHPUnit\Framework\TestCase

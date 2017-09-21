@@ -1,14 +1,17 @@
 <?php
 
-namespace ChadicusTest\Hmac;
+namespace ChadicusTest\Psr\Http\ServerMiddleware;
 
 use ArrayObject;
-use Chadicus\Hmac;
+use Chadicus\Psr\Http\ServerMiddleware\AuthenticationException;
+use Chadicus\Psr\Http\ServerMiddleware\Middleware;
+use Chadicus\Psr\Http\ServerMiddleware\Token;
+use Chadicus\Psr\Http\ServerMiddleware;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 
 /**
- * @coversDefaultClass \Chadicus\Hmac\Middleware
+ * @coversDefaultClass \Chadicus\Psr\Http\ServerMiddleware\Middleware
  * @covers ::__construct
  */
 final class MiddlewareTest extends \PHPUnit\Framework\TestCase
@@ -29,20 +32,20 @@ final class MiddlewareTest extends \PHPUnit\Framework\TestCase
         $time = time();
         $signature = md5("{$privateKey}{$nonce}{$time}{$publicKey}");
 
-        $token = new Hmac\Token($publicKey, $signature, $nonce, $time);
+        $token = new Token($publicKey, $signature, $nonce, $time);
 
-        $provider = $this->getMockBuilder('\\Chadicus\\Hmac\\KeyProviderInterface')->getMock();
+        $provider = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\KeyProviderInterface')->getMock();
         $provider->method('findPrivateKey')->willReturn($privateKey);
 
-        $extractor = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenExtractorInterface')->getMock();
+        $extractor = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenExtractorInterface')->getMock();
         $extractor->method('extract')->willReturn($token);
 
-        $validator = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenValidatorInterface')->getMock();
+        $validator = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenValidatorInterface')->getMock();
         $validator->method('validate')->willReturn(true);
 
         $container = new ArrayObject();
 
-        $middleware = new Hmac\Middleware($provider, $extractor, $validator, $container);
+        $middleware = new Middleware($provider, $extractor, $validator, $container);
 
         $headers = [
             'X-Hmac-Auth' => ["{$publicKey}:{$signature}:{$nonce}:{$time}"],
@@ -77,22 +80,22 @@ final class MiddlewareTest extends \PHPUnit\Framework\TestCase
         $time = time();
         $signature = md5("{$privateKey}{$nonce}{$time}{$publicKey}");
 
-        $token = new Hmac\Token($publicKey, $signature, $nonce, $time);
+        $token = new Token($publicKey, $signature, $nonce, $time);
 
-        $provider = $this->getMockBuilder('\\Chadicus\\Hmac\\KeyProviderInterface')->getMock();
+        $provider = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\KeyProviderInterface')->getMock();
         $provider->method('findPrivateKey')->willReturn($privateKey);
 
-        $extractor = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenExtractorInterface')->getMock();
+        $extractor = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenExtractorInterface')->getMock();
         $extractor->method('extract')->willReturn($token);
 
-        $exception = new Hmac\AuthenticationException(400, 'Bad Request');
+        $exception = new AuthenticationException(400, 'Bad Request');
 
-        $validator = $this->getMockBuilder('\\Chadicus\\Hmac\\TokenValidatorInterface')->getMock();
+        $validator = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenValidatorInterface')->getMock();
         $validator->method('validate')->will($this->throwException($exception));
 
         $container = new ArrayObject();
 
-        $middleware = new Hmac\Middleware($provider, $extractor, $validator, $container);
+        $middleware = new Middleware($provider, $extractor, $validator, $container);
 
         $headers = [
             'X-Hmac-Auth' => ["{$publicKey}:{$signature}:{$nonce}:{$time}"],

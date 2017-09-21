@@ -1,6 +1,6 @@
 <?php
 
-namespace Chadicus\Hmac;
+namespace Chadicus\Psr\Http\ServerMiddleware;
 
 /**
  * Immutable hmac authentication token.

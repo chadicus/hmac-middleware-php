@@ -1,6 +1,6 @@
 <?php
 
-namespace Chadicus\Hmac;
+namespace Chadicus\Psr\Http\ServerMiddleware;
 
 /**
  * Exception to throw when authentication fails.
