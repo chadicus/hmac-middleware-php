@@ -1,6 +1,11 @@
 <?php
 
-namespace Chadicus\Hmac;
+namespace Chadicus\Psr\Http\ServerMiddleware\Hmac;
+
+use Chadicus\Psr\Http\ServerMiddleware\AuthenticationException;
+use Chadicus\Psr\Http\ServerMiddleware\Token;
+use Chadicus\Psr\Http\ServerMiddleware\TokenExtractorInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Token extractor to obtain a token from an authorization header.

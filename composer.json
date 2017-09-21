@@ -20,9 +20,9 @@
         "php-coveralls/php-coveralls": "^1.0"
     },
     "autoload": {
-        "psr-4": { "Chadicus\\Hmac\\" : "src" }
+        "psr-4": { "Chadicus\\Psr\\Http\\ServerMiddleware\\" : "src" }
     },
     "autoload-dev": {
-        "psr-4": { "ChadicusTest\\Hmac\\" : "tests" }
+        "psr-4": { "ChadicusTest\\Psr\\Http\\ServerMiddleware\\" : "tests" }
     }
 }
