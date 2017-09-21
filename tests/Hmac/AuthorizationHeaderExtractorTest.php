@@ -59,11 +59,11 @@ final class AuthorizationHeaderExtractorTest extends TestCase
     public function extractInvalidHeader()
     {
         $headers = ['Authorization' => 'This isnt:exactly:right'];
-        $request = new ServerRequest([], [], 'http://localhost', 'POST');
+        $request = new ServerRequest([], [], 'http://localhost', 'POST', 'php://input', $headers);
 
         $extractor = new AuthorizationHeaderExtractor();
         try {
-            $token = $extractor->extract($request);
+            $extractor->extract($request);
             $this->fail('No exception thrown');
         } catch (AuthenticationException $e) {
             $this->assertSame(400, $e->getStatusCode());
