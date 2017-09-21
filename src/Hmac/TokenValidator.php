@@ -2,6 +2,7 @@
 
 namespace Chadicus\Psr\Http\ServerMiddleware\Hmac;
 
+use Chadicus\Psr\Http\ServerMiddleware\AuthenticationException;
 use Chadicus\Psr\Http\ServerMiddleware\Token;
 use Chadicus\Psr\Http\ServerMiddleware\TokenValidatorInterface;
 use Psr\Http\Message\ServerRequestInterface;
