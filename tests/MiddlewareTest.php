@@ -37,10 +37,14 @@ final class MiddlewareTest extends \PHPUnit\Framework\TestCase
         $provider = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\KeyProviderInterface')->getMock();
         $provider->method('findPrivateKey')->willReturn($privateKey);
 
-        $extractor = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenExtractorInterface')->getMock();
+        $extractor = $this->getMockBuilder(
+            '\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenExtractorInterface'
+        )->getMock();
         $extractor->method('extract')->willReturn($token);
 
-        $validator = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenValidatorInterface')->getMock();
+        $validator = $this->getMockBuilder(
+            '\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenValidatorInterface'
+        )->getMock();
         $validator->method('validate')->willReturn(true);
 
         $container = new ArrayObject();
@@ -85,12 +89,16 @@ final class MiddlewareTest extends \PHPUnit\Framework\TestCase
         $provider = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\KeyProviderInterface')->getMock();
         $provider->method('findPrivateKey')->willReturn($privateKey);
 
-        $extractor = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenExtractorInterface')->getMock();
+        $extractor = $this->getMockBuilder(
+            '\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenExtractorInterface'
+        )->getMock();
         $extractor->method('extract')->willReturn($token);
 
         $exception = new AuthenticationException(400, 'Bad Request');
 
-        $validator = $this->getMockBuilder('\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenValidatorInterface')->getMock();
+        $validator = $this->getMockBuilder(
+            '\\Chadicus\\Psr\\Http\\ServerMiddleware\\TokenValidatorInterface'
+        )->getMock();
         $validator->method('validate')->will($this->throwException($exception));
 
         $container = new ArrayObject();
